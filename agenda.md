@@ -8,5 +8,5 @@
 | 1:00 - 2:30 PM | GPU/CUDA 101                        | Riley Corzine |
 | 2:30 - 2:40 PM | Break | |
 | 2:40 - 3:30 PM | GPU/CUDA Programming Exercsies | Amit Saha |
-| 3:30 - 4:00 PM | Graduate Student Talk | Anand Radhakrishnan |
+| 3:30 - 4:00 PM | Graduate Student Talk | Anand Radhakrishnan, PhD CSE |
 
