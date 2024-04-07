@@ -30,7 +30,7 @@ Make sure to not remove the ```lib.py``` file, as this contains some of the driv
 
 6. Implement a kernel that adds 10 to each position of ``a`` and stores it in out. You have fewer threads per block than the size of ``a``.
 
-Tip: A block is a group of threads. The number of threads per block is limited, but we can have many different blocks. Variable cuda.blockIdx tells us what block we are in.
+*Tip: A block is a group of threads. The number of threads per block is limited, but we can have many different blocks. Variable cuda.blockIdx tells us what block we are in.*
 
 7. Implement the same kernel (as the previous question), but in 2d.  You have fewer threads per block than the size of ``a`` in both directions.
 
