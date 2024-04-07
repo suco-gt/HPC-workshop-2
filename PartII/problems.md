@@ -1,4 +1,4 @@
-# Problems
+# Problem Background
 
 For each of the following problems, you'll be writing the core logic of the GPU Kernel function and decide how data streams & threads will be organized. This sounds complicated, but is not too hard (as far as these examples go!). 
 
@@ -19,6 +19,8 @@ For each problem, you can complete the code directly in ``nano`` or a code edito
 python qn_file.py
 ```
 Make sure to not remove the ```lib.py``` file, as this contains some of the driver code for our grader!
+
+# Problems! 
 
 1. Implement a kernel that adds 10 to each position of vector ``a`` and stores it in vector out. You have 1 thread per position.
 
