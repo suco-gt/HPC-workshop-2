@@ -7,42 +7,36 @@ warnings.filterwarnings(
     action="ignore", category=numba.NumbaPerformanceWarning, module="numba"
 )
 
-def dot_spec(a, b):
-    return a @ b
+def map_spec(a):
+    return a + 10
 
-TPB = 8
-def dot_test(cuda):
-    def call(out, a, b, size):
+TPB = 4
+def shared_test(cuda):
+    def call(out, a, size) -> None:
         shared = cuda.shared.array(TPB, numba.float32)
-
         i = cuda.blockIdx.x * cuda.blockDim.x + cuda.threadIdx.x
         local_i = cuda.threadIdx.x
-        
+
         if i < size:
-            shared[local_i] = a[i] * b[i]
+            shared[local_i] = a[i]
             cuda.syncthreads()
-        if local_i == 0:
-            s = 0
-            for k in range(size):
-                s += shared[k]
-            out[0] = s
-        
+            # FILL ME IN (roughly 1 lines)
+
     return call
 
 
 SIZE = 8
-out = np.zeros(1)
-a = np.arange(SIZE)
-b = np.arange(SIZE)
+out = np.zeros(SIZE)
+a = np.ones(SIZE)
 problem = CudaProblem(
-    "Dot",
-    dot_test,
-    [a, b],
+    "Shared",
+    shared_test,
+    [a],
     out,
     [SIZE],
-    threadsperblock=Coord(SIZE, 1),
-    blockspergrid=Coord(1, 1),
-    spec=dot_spec,
+    threadsperblock=Coord(TPB, 1),
+    blockspergrid=Coord(2, 1),
+    spec=map_spec,
 )
 
 problem.check()
