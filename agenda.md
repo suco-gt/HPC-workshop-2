@@ -9,5 +9,5 @@
 | 2:30 - 2:40 PM | Break | |
 | 2:40 - 3:30 PM | GPU/CUDA Programming Exercsies | Amit Saha |
 | 3:30 - 4:00 PM | Q/A |Vijay Thakkar, PhD CS & NVIDIA Compute Architect | 
-| 4:00 - 4:30 PM | Graduate Student Talk | Anand Radhakrishnan, PhD CSE |
+| 4:00 - 4:30 PM | Accelerating Multiphase Compressible Flow Solvers via GPUs | Anand Radhakrishnan, PhD CSE |
 
