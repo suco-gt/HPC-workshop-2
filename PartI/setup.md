@@ -1,4 +1,4 @@
-Assuming you have ssh'd into a login node on ice, your next steps are to request a compute node with a CUDA capable GPU, where  ``[GPU_name]`` is filled with one of ```H100, A100, V100, RTX6000, A40```:
+Assuming you have ssh'd into a login node on ice, your next steps are to request a compute node with a CUDA capable GPU, where  ``[GPU_name]`` is filled with one of ```H100, A100, V100, A40```:
 ```
     salloc --nodes=1 --ntasks-per-node=1 --gres=gpu:[GPU_name]:1 --mem=0 --time=0:15:00
 ```
