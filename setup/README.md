@@ -1,5 +1,7 @@
 # Setup
 
+## Log onto Compute Node
+
 If you haven't already, please make sure to download the [GT VPN](https://gatech.service-now.com/home?id=kb_article_view&sysparm_article=KB0042139) and to verify that you have an ``ssh`` installation. After you've done this, please enter your terminal environment and run the following code, where ``<username>`` is your GT username.
 ```bash
 ssh <username>@login-ice.pace.gatech.edu
@@ -33,7 +35,17 @@ If you see this prompt, you've successfully logged on to the cluster! Logging on
 After you've successfully logged on, please run the following code to fork the repository that you'll be using today. 
 ```
 cd
-git clone LINK
+git clone https://github.com/suco-gt/HPC-workshop-2/    
 ls | grep workshop 
 ```
 If the repository is present, this should print the repository name. If not, please let us know. 
+
+At this point, you've successfully logged into the cluster. 
+
+## Open a GPU Node
+
+Once you've logged onto the cluster, run the following command to verify that you're able to open a GPU node. Note that finding an available node may not be possible, so the process may take a while. Fill in the ``[GPU_name]`` section with ```H100, A100, V100, RTX6000, A40```.
+
+```
+salloc --nodes=1 --ntasks-per-node=1 --gres=gpu:[GPU_name]:1 --mem=0 --time=0:15:00
+```
