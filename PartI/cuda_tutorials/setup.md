@@ -18,6 +18,7 @@ The first time that you log onto the cluster, please run the following commands 
 python -m pip install numpy --user
 python -m pip install numba --user
 python -m pip install --upgrade numpy numba llvmlite --user
-pip install -qqq git+https://github.com/chalk-diagrams/chalk
+python -mpip install -qqq git+https://github.com/chalk-diagrams/chalk
 ```
+
 
