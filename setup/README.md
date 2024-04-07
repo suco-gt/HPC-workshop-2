@@ -70,3 +70,4 @@ Afterwards, so that you don't occupy a login node that you don't intend to use, 
 ```
 exit
 ```
+You'll be able to find further instructions for installing dependencies and loading the correct modules for running CUDA code within the ``PartI`` and ``PartII`` folders.
