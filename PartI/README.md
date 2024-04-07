@@ -18,6 +18,7 @@ The first time that you log onto the cluster, please run the following commands 
 python -m pip install numpy --user
 python -m pip install numba --user
 python -m pip install --upgrade numpy numba llvmlite --user
+pip install -qqq git+https://github.com/danoneata/chalk@srush-patch-1
 ```
 
 If you're unable to access this through a GPU, a Colaboratory file will be available for you to use otherwise.
