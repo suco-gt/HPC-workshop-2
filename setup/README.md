@@ -44,8 +44,29 @@ At this point, you've successfully logged into the cluster.
 
 ## Open a GPU Node
 
-Once you've logged onto the cluster, run the following command to verify that you're able to open a GPU node. Note that finding an available node may not be possible, so the process may take a while. Fill in the ``[GPU_name]`` section with ```H100, A100, V100, RTX6000, A40```.
+Once you've logged onto the cluster, run the following command to verify that you're able to open a GPU node. Note that finding an available node may not be possible, so the process may take a while. Fill in the ``[GPU_name]`` section with one of ```H100, A100, V100, RTX6000, A40```.
 
 ```
 salloc --nodes=1 --ntasks-per-node=1 --gres=gpu:[GPU_name]:1 --mem=0 --time=0:15:00
+```
+If this works, you should see something that looks roughly like this.
+```
+salloc: Pending job allocation 570480
+salloc: job 570480 queued and waiting for resources
+salloc: job 570480 has been allocated resources
+salloc: Granted job allocation 570480
+salloc: Waiting for resource configuration
+salloc: Nodes atl1-1-01-005-17-0 are ready for job
+---------------------------------------
+Begin Slurm Prolog: Apr-06-2024 21:28:45
+Job ID:    570480
+User ID:   asaha92
+Account:   coc
+Job name:  interactive
+Partition: pace-gpu,ice-gpu
+---------------------------------------
+```
+Afterwards, so that you don't occupy a login node that you don't intend to use, simply exit via the following command.
+```
+exit
 ```
