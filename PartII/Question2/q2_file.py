@@ -3,28 +3,34 @@ import numpy as np
 import warnings
 from lib import CudaProblem, Coord
 
-def map_spec(a):
-    return a + 10
+def dot_spec(a, b):
+    return a @ b
 
-def map_block2D_test(cuda):
-    def call(out, a, size):
-        # FILL ME IN (roughly 4 lines)
+TPB = 8
+def dot_test(cuda):
+    def call(out, a, b, size) -> None:
+        shared = cuda.shared.array(TPB, numba.float32)
+
+        i = cuda.blockIdx.x * cuda.blockDim.x + cuda.threadIdx.x
+        local_i = cuda.threadIdx.x
+        # FILL ME IN (roughly 9 lines)
+        
     return call
 
 
-SIZE = 5
-out = np.zeros((SIZE, SIZE))
-a = np.ones((SIZE, SIZE))
-
+SIZE = 8
+out = np.zeros(1)
+a = np.arange(SIZE)
+b = np.arange(SIZE)
 problem = CudaProblem(
-    "Blocks 2D",
-    map_block2D_test,
-    [a],
+    "Dot",
+    dot_test,
+    [a, b],
     out,
     [SIZE],
-    threadsperblock=Coord(3, 3),
-    blockspergrid=Coord(2, 2),
-    spec=map_spec,
+    threadsperblock=Coord(SIZE, 1),
+    blockspergrid=Coord(1, 1),
+    spec=dot_spec,
 )
 
 problem.check()
