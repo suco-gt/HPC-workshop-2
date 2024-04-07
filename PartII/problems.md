@@ -10,6 +10,8 @@ You'll be writing Python code that closely parallels the algorithmic approach th
 
 Although this is not relevant until later, recall that a **global read** occurs when you read an array from memory, and similarly a **global write** occurs when you write an array to memory. Ideally, you should reduce the extent to which you perform ``global`` operations, so that your code will have minimal overhead. Additionally, our grader (may) throw an error if you do something not nice!
 
+Credits to [Sasha Rush](https://github.com/srush/GPU-Puzzles/tree/main) for the problems. Similar problems are available at the link.
+
 # Grading
 
 For each problem, you can complete the code directly in ``nano`` or a code editor of your choice. Afterwards, once you've logged onto a node that contains a NVIDIA GPU that is CUDA-capable, you may run your code for the **n**th question as follows.
