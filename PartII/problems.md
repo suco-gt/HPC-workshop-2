@@ -38,16 +38,16 @@ Make sure to not remove the ```lib.py``` file, as this contains some of the driv
 
 7. Implement the same kernel (as the previous question), but in 2d.  You have fewer threads per block than the size of ``a`` in both directions.
 
-8. Implement a kernel that adds 10 to each position of a and stores it in out. You have fewer threads per block than the size of ``a``.
+8. Implement a kernel that adds 10 to each position of ``a`` and stores it in out. You have fewer threads per block than the size of ``a``.
 
 *Warning: Each block can only have a constant amount of shared memory that threads in that block can read and write to. This needs to be a literal python constant not a variable. After writing to shared memory you need to call cuda.syncthreads to ensure that threads do not cross. (This example does not really need shared memory or syncthreads, but it is a demo.)*
 
-9. Implement a kernel that sums together the last 3 position of a and stores it in out. You have 1 thread per position. You only need 1 global read and 1 global write per thread.
+9. Implement a kernel that sums together the last 3 position of ``a`` and stores it in out. You have 1 thread per position. You only need 1 global read and 1 global write per thread.
 
 *Tip: Remember to be careful about syncing.*
 
-10. Implement a kernel that computes the dot-product of a and b and stores it in out. You have 1 thread per position. You only need 2 global reads and 1 global write per thread.
+10. Implement a kernel that computes the dot-product of ``a`` and ``b`` and stores it in out. You have 1 thread per position. You only need 2 global reads and 1 global write per thread.
 
 *Note: For this problem you don't need to worry about number of shared reads. We will handle that challenge later.*
 
-11. Implement a kernel that computes a 1D convolution between a and b and stores it in out. You need to handle the general case. You only need 2 global reads and 1 global write per thread.
+11. Implement a kernel that computes a 1D convolution between ``a`` and ``b`` and stores it in out. You need to handle the general case. You only need 2 global reads and 1 global write per thread.
