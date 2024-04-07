@@ -23,4 +23,4 @@ python -m pip install --upgrade numpy numba llvmlite --user
 pip install -qqq git+https://github.com/chalk-diagrams/chalk
 ```
 
-If you're unable to access this through a GPU, a Colaboratory file will be available for you to use otherwise.
+If you're unable to access a GPU through the cluster, or you'd like to access visualizations of the CUDA code, you may also run your exercises via a [Google Colaboratory File](https://drive.google.com/file/d/1drkxhpHHlo64-A72GklSiic5vv7op9k_/view?usp=sharing) after setting your hardware accelerator to a GPU.
