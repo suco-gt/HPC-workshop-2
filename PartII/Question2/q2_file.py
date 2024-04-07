@@ -3,6 +3,10 @@ import numpy as np
 import warnings
 from lib import CudaProblem, Coord
 
+warnings.filterwarnings(
+    action="ignore", category=numba.NumbaPerformanceWarning, module="numba"
+)
+
 def dot_spec(a, b):
     return a @ b
 
