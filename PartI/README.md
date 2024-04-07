@@ -11,13 +11,17 @@ Once you are in, load appropriate modules:
     module load intel-oneapi-mkl
 
     source ${INTEL_ONEAPI_MKLROOT}/setvars.sh
-
-    pip3 install numpy --user
-
-    pip3 install numba --user
-
-    pip3 install --upgrade numpy numba llvmlite --user
 ```
-You can paste these commands into the terminal every time, just to make sure that your dependencies are clear. Try to log on to a cluster using the same GPU each time.
+You can paste these commands into the terminal every time to load the correct modules. Try to log on to a cluster using the same GPU each time.
+
+The first time that you log onto the cluster, please run the following commands to install the correct dependencies for the project.
+
+```
+python -m pip install numpy --user
+
+python -m pip install numba --user
+
+python -m pip install --upgrade numpy numba llvmlite --user
+```
 
 If you're unable to access this through a GPU, a Colaboratory file will be available for you to use otherwise.
