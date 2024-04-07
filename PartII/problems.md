@@ -49,3 +49,5 @@ Make sure to not remove the ```lib.py``` file, as this contains some of the driv
 10. Implement a kernel that computes the dot-product of a and b and stores it in out. You have 1 thread per position. You only need 2 global reads and 1 global write per thread.
 
 *Note: For this problem you don't need to worry about number of shared reads. We will handle that challenge later.*
+
+11. Implement a kernel that computes a 1D convolution between a and b and stores it in out. You need to handle the general case. You only need 2 global reads and 1 global write per thread.
