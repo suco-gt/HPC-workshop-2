@@ -12,11 +12,11 @@ Once you are in, load appropriate modules:
 
     source ${INTEL_ONEAPI_MKLROOT}/setvars.sh
 
-    pip3 install numpy --user
+    pip install numpy --user
 
-    pip3 install numba --user
+    pip install numba --user
 
-    pip3 install --upgrade numpy numba llvmlite --user
+    pip install --upgrade numpy numba llvmlite --user
 ```
 You can paste these commands into the terminal every time, just to make sure that your dependencies are clear. Try to log on to a cluster using the same GPU each time.
 
